@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<p> Anzahl Ergebnisse = {{results.count}}</p> <br />
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Episode</th>
+      <th scope="col">Time</th>
+      <th scope="col">Speaker</th>
+      <th scope="col">Text</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for result in results %}
+		<tr>
+	      <th scope="row">{{result.episode.number}}</th>
+	      <td>{{result.start_time}}</td>
+	      <td>{{result.speaker.name}}</td>
+	      <td>{{result.text}}</td>
+	    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
