@@ -1,14 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<p> Anzahl Ergebnisse = {{results.count}}</p> <br />
+	<p> Es konnten {{results.count}} Ergebnisse für <b>"{{query}}"</b> gefunden werden.</p> <br />
+	<form action="/search/" method="GET">
+				<div class="input-group mb-3">
+					<input name="q" type="text" placeholder="Suchwort" class="form-control" id="floatingInput" />
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="submit">Suchen</button>
+					</div>
+				</div>
+	</form>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Episode</th>
-      <th scope="col">Time</th>
-      <th scope="col">Speaker</th>
+      <th scope="col">Zeit</th>
+      <th scope="col">Sprecher:in</th>
       <th scope="col">Text</th>
     </tr>
   </thead>

@@ -1,18 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>Bundeswehrbung</h1>
-	<h2>Suche</h2>
+	<div class="form-floating mb-3" style="text-align: left">
+		<h2>Idee</h2>
+		<p>Mit der Webserie "Die Rekruten" wirbt die deutsche Bundeswehr seit November 2016 auf YouTube nach neuen und vor allem jungen Wehrdienst-Interessierten. Für diesen Zweck setzt man auf Jumpcuts, kecke Sprüche und Jugendsprache. Die als Abenteuer dargestellte Grundausbildung ist auch durch ihre Sprachauswahl spannend. Probiere es selbst und prüfe wie oft Wörter und Themen die du mit der Bundeswehr verbindest in der Webserie genannt werden.
+		</p>
+	</div>
+
+	<h2 class="container py-3"> Wortsuche</h2>
 	<div class="row justify-content-md-center">
 		<div class="col col-md-6">
 			<form action="/search/" method="GET">
 				<div class="form-floating mb-3">
 					<input name="q" type="text" placeholder="Krieg" class="form-control" id="floatingInput" />
-					<label for="floatingInput">Suchwort</label>
+					<label for="floatingInput">Nach welchem Wort möchtest du suchen?</label>
 				</div>
-				<button class="btn btn-primary" type="submit">Suchen</button>
+				<button class="btn btn-light" type="submit" style="background-color: #F1D6AB">Suchen</button>
 			</form>
 		</div>
 	</div>
+
+	<div lass="form-floating mb-3" style="text-align: left">
+		<h2>Statistik</h2>
+		<p>One Day wird es hier weitere Auswertungen zu allen Folgen und Personen geben. Bis dahin muss man sich jedoch noch etwas gedulden.</p>
+	</div>
+
+
 
 {% endblock %}
