@@ -17,14 +17,25 @@
 				background-color: #F9F6F2;
 				text-align: center;
 			}
+
+			button.link {
+				background: none;
+				border: none;
+				font-weight: bold;
+				color: white;
+				font-size: xx-large;
+			}
+
 		</style>
 
 
 	</head>
 	<body>
 		<div style="background: #a3a380; padding: 10px 0; color: white;" >
-			<h1 class="container py-3" style="font-weight: bold;">Bundeswehrbung</h1>
-			<p class="lead">Ein Projekt zur Auswertung von Werbesprache der deutschen Bundeswehr</p>
+				<form action="{% url 'index' %}" method="GET">
+					<button class="link" type="submit">Bundeswehrbung</button>
+					<p class="lead">Ein Projekt zur Auswertung von Werbesprache der deutschen Bundeswehr</p>
+				</form>
 		</div>
 		<div class="container py-3">
 			{% block content %}{% endblock %}

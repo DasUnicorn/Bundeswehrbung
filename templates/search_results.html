@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<p> Es konnten {{results.count}} Ergebnisse für <b>"{{query}}"</b> gefunden werden.</p> <br />
+	<p> Es konnten {{results.count}} Abschnitte für <b>"{{query}}"</b> gefunden werden.</p> <br />
 	<form action="/search/" method="GET">
 				<div class="input-group mb-3">
 					<input name="q" type="text" placeholder="Suchwort" class="form-control" id="floatingInput" />
