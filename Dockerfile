@@ -9,7 +9,7 @@ RUN pip install poetry
 COPY ./pyproject.toml ./poetry.lock* /app/
 # RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 RUN poetry install
-RUN poetry add gunicorn
+RUN poetry add gunicorn psycopg2-binary
 
 # Copies all in the new docker container
 COPY . .
