@@ -1,7 +1,8 @@
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from wordsearch.models import Speaker, Episode, Line
 import csv
 from datetime import datetime, timedelta
+
 
 class Command(BaseCommand):
 	help = 'Import a given csv file into wordsearch database'
@@ -18,8 +19,8 @@ class Command(BaseCommand):
 					speaker, _ = Speaker.objects.get_or_create(name=row["Speaker"])
 
 					# we specify the input and the format...
-					start = datetime.strptime(row["Start Time"],"%H:%M:%S")
-					end = datetime.strptime(row["End Time"],"%H:%M:%S")
+					start = datetime.strptime(row["Start Timecode"],"%H:%M:%S.%f")
+					end = datetime.strptime(row["End Timecode"],"%H:%M:%S.%f")
 
 					Line.objects.create(
 						speaker=speaker,
