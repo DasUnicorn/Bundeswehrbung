@@ -8,7 +8,7 @@ class Speaker(models.Model):
 		return self.name
 
 	class Meta:
-		ordering = ("name")
+		ordering = ("name",)
 
 
 class Episode(models.Model):
@@ -18,7 +18,7 @@ class Episode(models.Model):
 		return f'Episode {self.number}'
 
 	class Meta:
-		ordering = ("number")
+		ordering = ("number",)
 
 
 class Line(models.Model):
