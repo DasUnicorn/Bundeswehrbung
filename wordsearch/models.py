@@ -7,12 +7,18 @@ class Speaker(models.Model):
 	def __str__(self):
 		return self.name
 
+	class Meta:
+		ordering = ("name")
+
 
 class Episode(models.Model):
 	number = models.IntegerField(unique=True)
 
 	def __str__(self):
 		return f'Episode {self.number}'
+
+	class Meta:
+		ordering = ("number")
 
 
 class Line(models.Model):
@@ -29,3 +35,6 @@ class Line(models.Model):
 
 	def __str__(self):
 		return self.text
+
+	class Meta:
+		ordering = ("episode", "start_time")
