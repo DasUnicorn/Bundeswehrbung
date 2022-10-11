@@ -10,3 +10,6 @@ def search_results(request):
     query = request.GET.get("q")
     results = Line.objects.filter(text__icontains=query)
     return render(request, 'search_results.html', {"results": results, "query": query})
+
+def impressum(request):
+    return render(request, 'impressum.html', {})
