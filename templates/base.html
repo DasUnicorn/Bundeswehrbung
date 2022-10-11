@@ -18,12 +18,13 @@
 				text-align: center;
 			}
 
-			button.link {
+			a.link {
 				background: none;
 				border: none;
 				font-weight: bold;
 				color: white;
 				font-size: xx-large;
+				text-decoration: none;
 			}
 
 		</style>
@@ -32,10 +33,8 @@
 	</head>
 	<body>
 		<div style="background: #757554; padding: 10px 0; color: white;" >
-				<form action="{% url 'index' %}" method="GET">
-					<button class="link" type="submit">Bundeswehrbung</button>
+					<a class="link" href="/" target="_blank">Bundeswehrbung</a>
 					<p class="lead">Ein Projekt zur Auswertung von Werbesprache der deutschen Bundeswehr</p>
-				</form>
 		</div>
 		<div class="container py-3">
 			{% block content %}{% endblock %}
@@ -45,5 +44,5 @@
 	</body>
 
 	<footer> 
-		<p>Made with &hearts; by <a href="https://lana.coffee" target="_blank" style="color: #A0855B;">Lana</a> | All <a href="https://github.com/DasUnicorn/Bundeswehrbung" target="_blank" style="color: #A0855B;">code</a> and <a href="https://github.com/DasUnicorn/Bundeswehrbung/tree/master/transcript" target="_blank" style="color: #A0855B;">data</a> of this project is public.</footer>
+		<p>Made with &hearts; by <a href="https://lana.coffee" target="_blank" style="color: #A0855B;">Lana</a> | All <a href="https://github.com/DasUnicorn/Bundeswehrbung" target="_blank" style="color: #A0855B;">code</a> and <a href="https://github.com/DasUnicorn/Bundeswehrbung/tree/master/transcript" target="_blank" style="color: #A0855B;">data</a> of this project is public. | <a href="/impressum" target="_blank" style="color: #A0855B;">Impressum</a></footer>
 </html>
