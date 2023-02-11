@@ -13,3 +13,6 @@ def search_results(request):
 
 def impressum(request):
     return render(request, 'impressum.html', {})
+
+def data(request):
+    return render(request, 'data.html', {})
