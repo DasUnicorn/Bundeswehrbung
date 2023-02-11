@@ -4,14 +4,14 @@ body {
 	text-align: center;
 }
 
-	a.link {
-		background: none;
-		border: none;
-		font-weight: bold;
-		color: white;
-		font-size: xx-large;
-		text-decoration: none;
-			}
+a.link {
+	background: none;
+	border: none;
+	font-weight: bold;
+	color: white;
+	font-size: xx-large;
+	text-decoration: none;
+		}
 
 .hightlight {
 	color: #A0855B;;
