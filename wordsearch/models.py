@@ -38,3 +38,16 @@ class Line(models.Model):
 
 	class Meta:
 		ordering = ("episode", "start_time")
+
+class SpeakShare(models.Model):
+	episode = models.ForeignKey(Episode, on_delete=models.CASCADE)
+	speaker = models.ForeignKey(Speaker, on_delete=models.CASCADE, null=True)
+	time = models.DurationField()
+	speak_share = models.DecimalField
+	word_number = models.IntegerField
+
+	def __str__(self):
+		return f'SpeakShare {self.speak_share}'
+
+	class Meta:
+		ordering = ("speak_share",)
