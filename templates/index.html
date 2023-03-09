@@ -1,38 +1,70 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div class="form-floating mb-3" style="text-align: left">
-		<h2>Idee</h2>
-		<p>Mit der Webserie "Die Rekruten" wirbt die deutsche Bundeswehr seit November 2016 auf YouTube nach neuen und vor allem jungen Wehrdienst-Interessierten. Für diesen Zweck setzt man auf Jumpcuts, kecke Sprüche und Jugendsprache. Die als Abenteuer dargestellte Grundausbildung ist auch durch ihre Sprachauswahl spannend. Probiere es selbst und prüfe wie oft Wörter und Themen die du mit der Bundeswehr verbindest in der Webserie genannt werden.
+
+	<div class="bg">
+		<h2>Hintergrund</h2>
+		<p>Mit der Webserie "Die Rekruten" wirbt die deutsche Bundeswehr seit November 2016 auf YouTube nach neuen und vor allem jungen Wehrdienst-Interessierten. Für diesen Zweck setzt man auf Jumpcuts, kecke Sprüche und Jugendsprache. Die als Abenteuer dargestellte Grundausbildung ist auch durch ihre Sprachauswahl spannend.
 		</p>
 	</div>
 
-	<h2 class="container py-3"> Wortsuche</h2>
-	<div class="row justify-content-md-center">
-		<div class="col col-md-6">
-			<form action="/search/" method="GET">
-				<div class="form-floating mb-3">
-					<input name="q" type="text" placeholder="Krieg" class="form-control" id="floatingInput" />
-					<label for="floatingInput">Nach welchem Wort möchtest du suchen?</label>
-				</div>
-				<button class="btn btn-light" type="submit" style="background-color: #F1D6AB">Suchen</button>
-			</form>
+	<div class="subtitle circle">
+		<p class="text">Ein Projekt zur Auswertung von Werbesprache der deutschen Bundeswehr</p>
+	</div>
+
+	<div class="stats">
+		<ul>
+			<li>64 Folgen</li>
+			<li>7h 6m 47s Video-Material</li>
+			<li>6537 unterschiedliche Worte</li>
+		</ul>
+	</div>
+
+	<div class="cloud">
+		<img src="/static/images/352.svg" alt="SVG" width="100%" height="30%">
+		<div class="cloud-text">
+			<div class="box">
+				<p class="fact">64 Folgen</p>
+			</div>
+			<div class="box">
+				<p class="fact">7h 6m 47s Video-Material</p>
+			</div>
+			<div class="box">
+				<p class="fact">6537 unterschiedliche Worte</p>
+			</div>
 		</div>
 	</div>
 
-	<div class="form-floating mb-3" style="text-align: left">
+	<div class="search">
+		<h2 class="large">Probiere es selbst!</h2>
+		<p class="medium">Welche Wörter oder Gesprächsinhalte vermutest du in einer Serie über die Grundausbildung der Bundeswehr? Schaue jetzt nach ob dein vermutetes Wort vorkommt und in welchem zusammenhang.</p>
+		<form action="/search/" method="GET">
+			<div class="">
+				<input name="q" type="text" placeholder="z.B. Krieg" id="floatingInput" class="searchInput" />
+			</div>
+			<button type="submit" class="searching">Suchen</button>
+		</form>
+	</div>
+
+	<div class="illustration">
+		<img src="/static/images/10.svg" alt="SVG" width="100%">
+	</div>
+
+	<div style="display: none">
 		<h2>Das Ergebnis lesen</h2>
 		<p>Bei der Suche handelt es sich um eine Teilwortsuche, ohne die Berücksichtigung von Groß- und Kleinbuchstaben. Dies bedeutet, dass alle Textabschnitte zurück gegeben werden, welche die eingegebene Buchstabenfolge in der angegeben Reihenfolge beinhalten. 
-		<p style="font-style: italic;">Beispiel:
+		<p>Beispiel:
 		Wird nach "Krieg" gesucht, werden auch alle Ergebnisse die "kriege", oder "gekriegt" beinhalten ausgegeben. Nicht aber "Askrie gehört diese Flasche.", da hier die Zeichenfolge durch ein Leerzeichen unterbrochen ist.
 		</p>
 		Um die einzelnen Wörter in Kontext setzen zu können, werden Abschnitte, in welchem die gesuchte Zeichenfolge vorkommt, zurück gegeben.
 		Zur Berechnung der angezeigten Ergebnissumme wird die Anzahl der gefundenen Abschnitte addiert. Es kann also sein, dass das gesuchte Wort im gegebenen Abschnitt mehrmals vorkommt und damit die korrekte Anzahl höher als das angezeigte Ergebnis ist.</p>
 	</div>
 
-	<div class="form-floating mb-3" style="text-align: left">
-		Dich interresiert ein Einblick in die Daten? Dann findest du einen genaueren Einblick in der <a href="/data" style="color: #A0855B;">Datenübersicht</a>.
-		
+	<div class="insights">
+		<h2>Insights</h2>
+		<p>Interessiert dich was die Daten sonst noch hergeben? Dann wird dich die Datenübersicht mit Zusammenstellungen der Insights interesieren.</p>
+		<p>Alle Daten sind außerdem öffentlich hier zu finden, falls du deine eigenen Auswertungen machen möchtest.</p>
+		<a href="/data" class="searching">Einblick</a>
 	</div>
 
 {% endblock %}

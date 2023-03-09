@@ -1,70 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div class="form-floating mb-3" style="text-align: left">
+<section class="fullSection">
+	<div class="" style="text-align: left">
 		<h2>Daten-Einblick</h2>
-		<p>Hier die harten Fakten:</p>
+		<p>Die Basis-Fakten:</p>
 		<ul>
-			<li>64 Episoden</li>
-			<li>7h 6m 47s Material</li>
-			<li>6537 unterschiedliche Worte</li>
+			<li>{{episode_number}} Episoden</li>
+			<li>{{total_time}} Material</li>
+			<li>{{word_count}} unterschiedliche Worte</li>
+			<li>{{speaker_number}} Sprecher*innen</li>
+			<li>Davon sind {{female_speaker}} Sprechende weiblich und {{male_speaker}} männlich</li>
 		</ul>
 	</div>
 
-	<div class="d-lg-flex align-items-center">
+	<div>
+		<h2>Infos zu den Sprechenden</h2>
+		<p>Von den insgesamt {{speaker_number}} Sprechenden sind {{female_speaker}} weiblich und {{male_speaker}}. Zusammen sprechen Sie eine Gesamtzeit von {{spoken_time}}. {{spoken_time_male}} wird dabei von männlichen Personen und {{spken_time_female}} von weiblichen Personen gesprochen.</p>
+		<p>Den Größten Redeanteil hat dabei {{longest_speaker_name}} mit {{longest_speaker_time}}.</p>
+		<p>{{shortest_speaker_name}} kommt mit {{shortest_speaker_time}} am wenigsten zu Wort.</p>
+	</div>
+
+	<div class="">
 		<h3>Häufige Wörter</h3>
-		<div class="px-4">
-			<h3 class="py-3 text-center">Die 10 häufigsten Wörter</h3>
-				<table class="table table-bordered">
-				  <tr>
-				    <th>Wort</th>
-				    <th>Häufigkeit</th>
-				  </tr>
-				  <tr>
-				    <td>ich</td>
-				    <td>1464</td>
-				  </tr>
-				  <tr>
-				    <td>die</td>
-				    <td>1370</td>
-				  </tr>
-				  <tr>
-				    <td>das</td>
-				    <td>1291</td>
-				  </tr>
-				  <tr>
-				    <td>und</td>
-				    <td>1287</td>
-				  </tr>
-				  <tr>
-				    <td>ist</td>
-				    <td>932</td>
-				  </tr>
-				  <tr>
-				    <td>wir</td>
-				    <td>897</td>
-				  </tr>
-				  <tr>
-				    <td>sie</td>
-				    <td>842</td>
-				  </tr>
-				  <tr>
-				    <td>jetzt</td>
-				    <td>759</td>
-				  </tr>
-				  <tr>
-				    <td>der</td>
-				    <td>720</td>
-				  </tr>
-				  <tr>
-				    <td>so</td>
-				    <td>695</td>
-				  </tr>
-				</table>
-		</div>
-		<div class="px-4">
-			<h3 class="py-3 text-center">Die 10 häufigsten Nomen</h3>
-			<table class="table table-bordered">
+		<p>Das häufigste Wort ist "ich" und kommt insgesamt 1464 Mal vor.</p>
+		<p>Unter den korriosesten Wörtern zählen: "Arschgeige"(1), "Sackhaare"(1), "Digga/Digger"(5),"Pinienkernen", "Pissbogen"(1), "Hausfrau"(2)</p>
+		
+		<div class="">
+			<h3 class="">Die 10 häufigsten Nomen</h3>
+			<table class="full">
 				<tr>
 					<th>Wort</th>
 				    <th>Häufigkeit</th>
@@ -111,55 +75,7 @@
 				</tr>
 			</table>
 		</div>
-		<div class="my-4">
-			<h3 class="my-3 text-center">Die 10 häufigsten Verben</h3>
-			<table class="table table-bordered">
-				<tr>
-					<th>Wort</th>
-				    <th>Häufigkeit</th>
-				</tr>
-				<tr>
-				    <td>ist</td>
-				    <td>932</td>
-				</tr>
-				<tr>
-				    <td>haben</td>
-				    <td>438</td>
-				</tr>
-				<tr>
-				    <td>sind</td>
-				    <td>270</td>
-				</tr>
-				<tr>
-				    <td>habe</td>
-				    <td>236</td>
-				</tr>
-				<tr>
-				    <td>hat</td>
-				    <td>230</td>
-				</tr>
-				<tr>
-				    <td>werden</td>
-				    <td>228</td>
-				</tr>
-				<tr>
-				    <td>machen</td>
-				    <td>206</td>
-				</tr>
-				<tr>
-				    <td>muss</td>
-				    <td>188</td>
-				</tr>
-				<tr>
-				    <td>wird</td>
-				    <td>178</td>
-				</tr>
-				<tr>
-				    <td>kann</td>
-				    <td>164</td>
-				</tr>
-			</table>
-		</div>
 	</div>
+</section>
 
 {% endblock %}

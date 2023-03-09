@@ -1,0 +1,342 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafaf9;
+}
+
+.container {  
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);  
+  grid-template-areas:  
+    "h h h h h h h h h h h h h h" 
+    ". bg bg bg bg bg bg bm st st st st st ."
+    ". bg bg bg bg bg bg bm sts sts sts sts sts ."
+    ". s s s s s s s s s s s s ."
+    ". i i i i i in in in in in in in ."
+    "r r r r r r r r r r r r r r"
+    "f f f f f f f f f f f f f f"; 
+}
+
+@media (min-width: 800px) {
+  .container {
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-areas:  
+    "h h h h h h h h h h h h h h h h" 
+    ". . . bg bg bg bg . s s s s s . . ."
+    ". . . in in in . . c c c c c . . ."
+    ". . . r r r r r r r r r r . . ."
+    "f f f f f f f f f f f f f f f f"; 
+  }
+}
+
+@media (min-width: 2500px) {
+  .container {
+    grid-template-areas:
+    ". . . . h h h h h h h h h . . ." 
+    ". . . . bg bg bg . s s s s s . . ."
+    ". . . . in in in . c c c c c . . ."
+    ". . . . r r r r r r r r r . . ."
+    ". . . . f f f f f f f f f . . .";
+  }
+}
+
+header { 
+  grid-area: h;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  font-family: "Fugaz One";
+  color: white;
+  text-decoration: none;
+  background: hsla(82, 38%, 15%, 1);
+  background: linear-gradient(135deg, hsla(82, 38%, 15%, 1) 10%, hsla(81, 39%, 27%, 1) 50%, hsla(82, 39%, 30%, 1) 100%);
+  background: -moz-linear-gradient(135deg, hsla(82, 38%, 15%, 1) 10%, hsla(81, 39%, 27%, 1) 50%, hsla(82, 39%, 30%, 1) 100%);
+  background: -webkit-linear-gradient(135deg, hsla(82, 38%, 15%, 1) 10%, hsla(81, 39%, 27%, 1) 50%, hsla(82, 39%, 30%, 1) 100%);
+}
+
+.bg { 
+  grid-area: bg; 
+  padding-top: 25px;
+}
+
+.border {
+  grid-area: b;
+}
+
+.borderR{
+  grid-area: br;
+}
+
+.borderM{
+  grid-area: bm;
+}
+
+.subtitle { 
+  grid-area: st; 
+}
+
+.stats {
+  grid-area: sts;
+}
+
+.search {
+  grid-area: s;
+  padding: 10px 0px;
+  border-top: 2px solid rgba(234,216,161, 1);
+  border-bottom: 2px solid rgba(234,216,161, 1);
+  padding-bottom: 30px;
+}
+
+.illustration {
+  grid-area: i;
+  align-self: center;
+}
+
+.insights {
+  grid-area: in;
+  padding: 20px 0px;
+      align-self: center;
+}
+
+footer { 
+  grid-area: f; 
+  display: flex;
+  justify-content: center;
+}
+
+h2, h3, h4, h5 {
+  font-family: "Fugaz One";
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+p, li {
+  font-family: "Mulish";
+  font-size: small;
+}
+
+.title {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: x-large;
+}
+
+.banner {
+  display: none;
+  color: black;
+  margin: 0px;
+  padding: 8px;
+  border-radius:10px;
+  font-style: italic;
+  background: hsla(45, 63%, 77%, 1);
+  background: linear-gradient(45deg, hsla(45, 63%, 77%, 1) 10%, hsla(44, 61%, 70%, 1) 50%, hsla(44, 61%, 70%, 1) 100%);
+  background: -moz-linear-gradient(45deg, hsla(45, 63%, 77%, 1) 10%, hsla(44, 61%, 70%, 1) 50%, hsla(44, 61%, 70%, 1) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(45, 63%, 77%, 1) 10%, hsla(44, 61%, 70%, 1) 50%, hsla(44, 61%, 70%, 1) 100%);
+}
+
+.circle {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(234,216,161, 1) 0%,
+    rgba(234,216,161, 1) 70%,
+    rgba(234,216,161, 0) 70.3%
+  );
+  height: 130px;
+  width: 130px;
+  margin-top: -30px;
+}
+
+.cloud {
+  display: none;
+  grid-area: c;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+
+.cloud-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 45%;
+  width: 100%;
+}
+
+.box {
+  border-radius: 10px;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(45, 63%, 77%, 1);
+  background: linear-gradient(45deg, hsla(45, 63%, 77%, 1) 10%, hsla(44, 61%, 70%, 1) 50%, hsla(44, 61%, 70%, 1) 100%);
+  background: -moz-linear-gradient(45deg, hsla(45, 63%, 77%, 1) 10%, hsla(44, 61%, 70%, 1) 50%, hsla(44, 61%, 70%, 1) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(45, 63%, 77%, 1) 10%, hsla(44, 61%, 70%, 1) 50%, hsla(44, 61%, 70%, 1) 100%);
+}
+
+.fact {
+  color: white;
+  font-family: "Fugaz One";
+  text-transform: uppercase;
+  text-align: center;
+  margin: 5px;
+}
+
+.text {
+  text-align: center;
+  padding-top: 10px;
+  font-style: italic;
+}
+
+.large {
+  font-size: large;
+}
+
+.medium {
+  font-size: medium;
+}
+
+li {
+  list-style: square;
+}
+
+.searchInput {
+  border-radius:10px;
+  border: 1px solid #eee;
+  transition: .3s border-color;
+  padding: 10px;
+  margin:10px 0;
+  width: 100%;
+  box-shadow:0 0 4px rgba(0,0,0,0.3);
+}
+.searchInput:hover {
+  border: 1px solid #aaa;
+}
+
+button.searching, a.searching{
+  display:inline-block;
+  width: 100%;
+  padding:0.5em 3em;
+  border:0.16em solid #365314;
+  border-radius:10px;
+  background-color: #365314;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  font-family: "Fugaz One";
+  font-size: medium;
+  color: white;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  transition: all 0.15s;
+}
+
+button.searching:hover, a.searching:hover{
+  border-color: #EAD8A1;
+}
+
+.svg {
+  width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: #C39E3A;
+  font-weight: bold;
+}
+
+@media (min-width: 800px) {
+  .circle {
+    display: none;
+  }
+
+  .stats {
+    display: none;
+  }
+
+  header {
+    height: 300px;
+  }
+
+  .title {
+    font-size: xxx-large;
+  }
+
+  .banner {
+    display: inline;
+  }
+
+  h1 {
+    margin-bottom: 2px;
+  }
+
+  h2, h3, h4, h5 {
+    font-size: large;
+  }
+
+  p {
+    font-size: medium;
+  }
+
+  .illustration {
+    display: none;
+  }
+
+  .search {
+    background-color: #f0e5c4;
+    border-radius:10px;
+    padding: 20px 40px;
+    margin: 20px 10px;
+    border: none;
+  }
+
+  .bg {
+    align-self: center;
+  }
+
+  .cloud {
+    display: flex;
+  }
+}
+
+.fullSection {
+    grid-area: r;
+}
+
+.padding {
+  padding: 20px 0px;
+}
+
+.small {
+  width: 50%;
+}
+
+.gridCenter {
+  display: grid;
+  justify-items: center;
+}
+
+.full {
+  width: 100%;
+}
+
+th {
+  font-family: "Mulish";
+  font-size: small;
+  font-weight: bold;
+}
+
+td {
+  font-family: "Mulish";
+  font-size: small;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f0e5c4;
+}
