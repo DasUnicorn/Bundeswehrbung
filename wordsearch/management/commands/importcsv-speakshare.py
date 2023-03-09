@@ -1,9 +1,9 @@
 from django.core.management.base import BaseCommand
-from wordsearch.models import Speaker, Episode, Line
+from wordsearch.models import Speaker, Episode, SpeakShare
 import csv
 from datetime import datetime, timedelta
 from pathlib import Path
-from Decimal import Decimal
+from decimal import Decimal
 
 
 class Command(BaseCommand):
@@ -17,18 +17,20 @@ class Command(BaseCommand):
 			with open(file, 'r') as fp: 		#schließt Datei nach dem Block
 				reader = csv.DictReader(fp)
 				for row in reader:
-					episode = Path('filename.csv').stem
-					episode, _ = Episode.objects.get_or_create(number=row["Episode"])
-					name, _ = Speaker.objects.get_or_create(name=row["Speaker"])
+					episode_number = Path(file).stem
+					episode, _ = Episode.objects.get_or_create(number=episode_number)
+					speaker, _ = Speaker.objects.get_or_create(name=row["name"])
 
 					# we specify the input and the format...
-					time = datetime.strptime(row["Time"],"%H:%M:%S")
-					percantage[:-1] = Speak_Share.Decimal(row["speak_share"])
-					word_number = words(row["word_number"])
+					time = datetime.strptime(row["time"],"%H:%M:%S")
+					delta = timedelta(hours=time.hour, minutes=time.minute, seconds=time.second)
+					speak_share = row["percentage"][:-1]
+					word_number = row["words"]
 
-					Line.objects.create(
+
+					SpeakShare.objects.create(
 						episode=episode,
 						speaker=speaker,
-						time=time,
+						time=delta,
 						speak_share=speak_share,
 						word_number=word_number)

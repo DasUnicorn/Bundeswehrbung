@@ -1,8 +1,11 @@
 from django.db import models
+from datetime import timedelta
 
 
 class Speaker(models.Model):
 	name = models.CharField(max_length=200, unique=True)
+	gender = models.CharField(max_length=12, blank=True)
+	age = models.PositiveSmallIntegerField(null=True, blank=True)
 
 	def __str__(self):
 		return self.name
@@ -13,6 +16,9 @@ class Speaker(models.Model):
 
 class Episode(models.Model):
 	number = models.IntegerField(unique=True)
+	duration = models.DurationField()
+	spoken_time = models.DurationField()
+	spoken_words = models.PositiveIntegerField()
 
 	def __str__(self):
 		return f'Episode {self.number}'
@@ -41,13 +47,26 @@ class Line(models.Model):
 
 class SpeakShare(models.Model):
 	episode = models.ForeignKey(Episode, on_delete=models.CASCADE)
-	speaker = models.ForeignKey(Speaker, on_delete=models.CASCADE, null=True)
 	time = models.DurationField()
-	speak_share = models.DecimalField
-	word_number = models.IntegerField
+	speak_share = models.DecimalField(max_digits=4, decimal_places=1)
 
 	def __str__(self):
 		return f'SpeakShare {self.speak_share}'
 
 	class Meta:
 		ordering = ("speak_share",)
+
+class ShareOfSpeech(models.Model):
+	speaker = models.ForeignKey(Speaker, on_delete=models.CASCADE)
+	episode = models.ForeignKey(Episode, on_delete=models.CASCADE)
+	duration = models.DurationField()
+	words = models.PositiveIntegerField()
+
+	def __str__(self):
+		return f'TimeSpoken {self.speak_share}'
+
+	class Meta:
+		ordering = ("speaker",)
+
+
+#Speaker, episode, count all durations with id speaker + id episode, count all text in episode with id speaker

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Speaker, Episode, Line
+from .models import Speaker, Episode, Line, SpeakShare
 
 
 @admin.register(Line)
@@ -14,3 +14,10 @@ class EpisodeAdmin(admin.ModelAdmin):
 @admin.register(Speaker)
 class SpeakerAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(SpeakShare)
+class SpeakShareAdmin(admin.ModelAdmin):
+    pass
+
+
