@@ -18,5 +18,7 @@ RUN mkdir /data
 # symbolic link (-fs = -f -s, in case file already exists)
 RUN ln -fs /data/settings_local.py bundeswehrbung/settings_local.py
 
+RUN poetry run python ./manage.py collectstatic --noinput
+
 # program, start, with gunicorn, name, port, worker number 6 max
 CMD ["poetry", "run", "gunicorn", "bundeswehrbung.wsgi", "-b", "0.0.0.0:8000", "-w", "6"]
