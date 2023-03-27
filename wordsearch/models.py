@@ -16,9 +16,9 @@ class Speaker(models.Model):
 
 class Episode(models.Model):
 	number = models.IntegerField(unique=True)
-	duration = models.DurationField()
-	spoken_time = models.DurationField()
-	spoken_words = models.PositiveIntegerField()
+	duration = models.DurationField(default=timedelta)
+	spoken_time = models.DurationField(default=timedelta)
+	spoken_words = models.PositiveIntegerField(default=0)
 
 	def __str__(self):
 		return f'Episode {self.number}'
