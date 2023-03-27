@@ -13,9 +13,15 @@ class Command(BaseCommand):
 	def handle(self, *args, **options):
 		for file in options['filenames']:
 			with open(file, 'r') as fp: 		#schließt Datei nach dem Block
+				print(f'Importing {file}')
 				reader = csv.DictReader(fp)
 				for row in reader:
-					episode, _ = Episode.objects.get_or_create(number=row["Episode"])
+					try:
+						episode_num = int(row["Episode"])
+					except ValueError:
+						episode_num = 0
+
+					episode, _ = Episode.objects.get_or_create(number=episode_num)
 					speaker, _ = Speaker.objects.get_or_create(name=row["Speaker"])
 
 					# we specify the input and the format...
