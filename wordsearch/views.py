@@ -14,7 +14,7 @@ def search_results(request):
     return render(request, 'search_results.html', {"results": results, "query": query})
 
 def impressum(request):
-    return render(request, 'impressum.html', {""})
+    return render(request, 'impressum.html', {})
 
 def data(request):
     speaker_number = Speaker.objects.count()
