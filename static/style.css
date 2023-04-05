@@ -1,6 +1,40 @@
+/* HTML defautl */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+/* FONTS: */
+
+@font-face {
+  font-family: 'Fugaz One';
+  src: url('fonts/Fugaz_One/FugazOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: 400;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('fonts/Mulish/static/Mulish-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: 400;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('fonts/Mulish/static/Mulish-SemiBold.ttf') format('truetype');
+  font-weight: semi-bold;
+  font-style: 600;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('fonts/Mulish/static/Mulish-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: 700;
+}
+
+/* Custom CSS*/
 
 html, body {
   margin: 0;
@@ -20,8 +54,8 @@ body {
     ". bg bg bg bg bg bg bm sts sts sts sts sts ."
     ". s s s s s s s s s s s s ."
     ". i i i i i in in in in in in in ."
-    "r r r r r r r r r r r r r r"
-    "f f f f f f f f f f f f f f"; 
+    ". r r r r r r r r r r r r ."
+    ". f f f f f f f f f f f f ."; 
 }
 
 @media (min-width: 800px) {
