@@ -31,6 +31,7 @@ class Line(models.Model):
 	speaker = models.ForeignKey(Speaker, on_delete=models.CASCADE, related_name="lines", null=True)
 	episode = models.ForeignKey(Episode, on_delete=models.CASCADE, related_name="lines")
 	text = models.TextField()
+	words = models.PositiveIntegerField(default=0)
 	start_time = models.DurationField()
 	end_time = models.DurationField()
 	notes = models.TextField(blank=True)
