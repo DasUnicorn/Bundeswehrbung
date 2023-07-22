@@ -8,6 +8,7 @@ authors = ["Your Name <you@example.com>"]
 python = "^3.10"
 Django = "^4.0.5"
 whitenoise = "^6.4.0"
+sentry-sdk = {extras = ["django"], version = "^1.28.1"}
 
 [tool.poetry.dev-dependencies]
 
