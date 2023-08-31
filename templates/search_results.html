@@ -26,7 +26,7 @@
 			<tr>
 		    	<th scope="row">{{result.episode.number}}</th>
 		    	{% if result.youtube_link %} 
-		    	<td><a href="{{ result.youtube_link }}" target="_blank" rel="noopener noreferrer">{{result.start_time}}</a></td>
+		    	<td><a href="{{ result.youtube_link }}" target="_blank" rel="noopener noreferrer" class="link">{{result.start_time}}</a></td>
 		    	{% else %}
 		    	<td>{{result.start_time}}</td>
 		    	{% endif %}

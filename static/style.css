@@ -284,8 +284,9 @@ button.searching:hover, a.searching:hover{
 }
 
 .link {
-  text-decoration: none;
-  color: #C39E3A;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  color: #365314;
   font-weight: bold;
 }
 
