@@ -16,9 +16,14 @@
 
 	<div>
 		<h2>Infos zu den Sprechenden</h2>
-		<p>Von den insgesamt {{speaker_number}} Sprechenden sind {{female_speaker}} weiblich und {{male_speaker}} männlich. Zusammen sprechen Sie eine Gesamtzeit von {{spoken_time}}. {{spoken_time_male}} wird dabei von männlichen Personen und {{spken_time_female}} von weiblichen Personen gesprochen.</p>
-		<p>Den Größten Redeanteil hat {{longest_speaker_name}} mit {{longest_speaker_time}}.</p>
-		<p>{{shortest_speaker_name}} kommt mit {{shortest_speaker_time}} am wenigsten zu Wort.</p>
+		<p>Von den insgesamt {{speaker_number}} Sprechenden sind {{female_speaker}} weiblich und {{male_speaker}} männlich. Zusammen sprechen Sie eine Gesamtzeit von {{spoken_time}}.<br>{{spoken_time_male}} wird dabei von männlichen Personen und {{spoken_time_female}} von weiblichen Personen gesprochen.</p>
+		<p>Den Größten Redeanteil hat {{max_speaker_name}} mit {{max_speaker_time}}.</p>
+		<p>{{min_speaker_name}} kommt mit {{min_speaker_time}} Redezeit am wenigsten zu Wort.</p>
+	</div>
+
+	<div>
+		<h2>Infos zu den Episoden</h2>
+		<p>Ingesamt gibt es {{episode_number}} Episoden mit {{total_time}} Laufzeit.<br>In ihnen wird {{spoken_time}} lang gesprochen. Am meisten Redezeit findet sich in Episode {{max_spoken_time_eps}} mit einer Redezeit von {{max_spoken_time_eps_time}}. Am wenigsten gesprochen wird in Episode {{min_spoken_time_eps}} mit einer Redezeit von {{min_spoken_time_eps_time}}. Im Schnitt wird pro Episode {{spoken_time_eps_avg}} lang gesprochen.</p>
 	</div>
 
 	<div class="">
