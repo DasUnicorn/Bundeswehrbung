@@ -19,6 +19,7 @@ class Episode(models.Model):
 	duration = models.DurationField(default=timedelta)
 	spoken_time = models.DurationField(default=timedelta)
 	spoken_words = models.PositiveIntegerField(default=0)
+	youtube_id = models.CharField(null=True, blank=True, max_length=20)
 
 	def __str__(self):
 		return f'Episode {self.number}'
@@ -39,6 +40,12 @@ class Line(models.Model):
 	@property	
 	def duration(self):
 		return self.end_time - self.start_time
+
+	def youtube_link(self):
+		if not self.episode.youtube_id:
+			return None
+		time = int(self.start_time.total_seconds())
+		return f"https://www.youtube.com/watch?v={self.episode.youtube_id}&t={time}"
 
 	def __str__(self):
 		return self.text

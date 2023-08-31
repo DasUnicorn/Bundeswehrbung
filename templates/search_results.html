@@ -4,33 +4,37 @@
 <section class="fullSection">
 	<p class="padding">Die Buchstabenkombination <b>"{{query}}"</b> konnte {{results.count}} Mal gefunden werden.</p>
 	<form action="/search/" method="GET" class="gridCenter">
-				<div class="padding small">
-					<input name="q" type="text" placeholder="Suchwort" class="searchInput" id="floatingInput" />
-					<div class="input-group-append">
-						<button class="searching" type="submit">Suchen</button>
-					</div>
-				</div>
+		<div class="padding small">
+			<input name="q" type="text" placeholder="Suchwort" class="searchInput" id="floatingInput" />
+			<div class="input-group-append">
+				<button class="searching" type="submit">Suchen</button>
+			</div>
+		</div>
 	</form>
 
 	<table class="padding">
-	  <thead>
-	    <tr>
-	      <th scope="col">Episode</th>
-	      <th scope="col">Zeit</th>
-	      <th scope="col">Sprecher:in</th>
-	      <th scope="col">Text</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	  	{% for result in results %}
+		<thead>
 			<tr>
-		      <th scope="row">{{result.episode.number}}</th>
-		      <td>{{result.start_time}}</td>
-		      <td>{{result.speaker.name}}</td>
-		      <td>{{result.text}}</td>
+	     		<th scope="col">Episode</th>
+	      		<th scope="col">Zeit</th>
+	      		<th scope="col">Sprecher:in</th>
+	      		<th scope="col">Text</th>
+	    	</tr>
+	  	</thead>
+		<tbody>
+			{% for result in results %}
+			<tr>
+		    	<th scope="row">{{result.episode.number}}</th>
+		    	{% if result.youtube_link %} 
+		    	<td><a href="{{ result.youtube_link }}" target="_blank" rel="noopener noreferrer">{{result.start_time}}</a></td>
+		    	{% else %}
+		    	<td>{{result.start_time}}</td>
+		    	{% endif %}
+		    	<td>{{result.speaker.name}}</td>
+		    	<td>{{result.text}}</td>
 		    </tr>
-		{% endfor %}
-	  </tbody>
+			{% endfor %}
+	  	</tbody>
 	</table>
 </section>
 

@@ -13,6 +13,7 @@ def index(request):
 def search_results(request):
     query = request.GET.get("q")
     results = Line.objects.filter(text__icontains=query)
+
     return render(request, 'search_results.html', {"results": results, "query": query})
 
 def impressum(request):
@@ -67,7 +68,6 @@ def data(request):
     min_time_esp_name = spoken_time_min.get('episode')
     min_time_esp = spoken_time_min.get('time')
 
-
     #Spoken time by gender
     spoken_time_female = duration_per_line.filter(speaker__gender="female").aggregate(Sum('time'))
     spoken_time_male = duration_per_line.filter(speaker__gender="male").aggregate(Sum('time'))
@@ -82,8 +82,6 @@ def data(request):
     max_speaker_time = max_speaker.get('time')
     min_speaker_name = min_speaker.get('speaker__name')
     min_speaker_time = min_speaker.get('time')
-
-
 
 
     return render(request, 'data.html', {
